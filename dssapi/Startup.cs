@@ -53,6 +53,7 @@ namespace dssapi
 
 			app.UseHttpsRedirection();
 			app.UseMvc();
+			app.UseCors("CorsPolicy");
 		}
 	}
 }
