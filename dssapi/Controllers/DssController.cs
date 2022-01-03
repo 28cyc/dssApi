@@ -15,11 +15,10 @@ namespace dssapi.Controllers
 	{
 		DssDac dac = new DssDac();
 		//https://localhost:44321/api/dss
-		[HttpPost]
-		public JsonResult Post(DssModel model)
+		[HttpGet("{VillageID}")]
+		public JsonResult Post(string VillageID)
 		{
-			DssModel data = dac.readDb(model.VillageID);
-			//return JsonConvert.SerializeObject(data);
+			DssModel data = dac.readDb(VillageID);
 			return Json(data);
 		}
 	}
